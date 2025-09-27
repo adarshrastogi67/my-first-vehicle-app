@@ -21,7 +21,12 @@ on:
     # Run only on branches/commits and not tags
     branches:
       - main
-
+# Needed if GITHUB_TOKEN by default do not have right to create release
+permissions:
+  contents: write
+  packages: write
+  checks: read
+  
 jobs:
   get-app-name:
     runs-on: ubuntu-22.04
